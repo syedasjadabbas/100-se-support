@@ -1,0 +1,143 @@
+.stats-section {
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 100px 10px 40px 10px;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.stats-main-title {
+  font-family: var(--font-sans);
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: var(--color-secondary);
+  line-height: 1.15;
+  margin: 0 0 50px 0;
+}
+
+/* Orange Counter Bar */
+.stats-counter-bar {
+  background-color: var(--color-accent);
+  border-radius: 10px;
+  padding: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 120px;
+}
+
+.stats-counter-col {
+  flex: 0 0 25%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 15px;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.stats-counter-col:hover {
+  transform: translateY(-10px);
+}
+
+.stats-counter-title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.stats-counter-number-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.stats-counter-number {
+  font-family: var(--font-sans);
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--color-white);
+}
+
+.stats-counter-suffix {
+  font-family: var(--font-sans);
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--color-white);
+  margin-left: 2px;
+}
+
+/* Responsive - Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .stats-section {
+    padding: 80px 10px 40px 10px;
+  }
+
+  .stats-main-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .stats-counter-bar {
+    margin-bottom: 80px;
+  }
+
+  .stats-counter-col {
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 20px 15px;
+  }
+
+  .stats-counter-number,
+  .stats-counter-suffix {
+    font-size: 36px;
+  }
+}
+
+/* Responsive - Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .stats-section {
+    padding: 60px 0 20px 0;
+  }
+
+  .stats-main-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .stats-counter-bar {
+    margin-bottom: 60px;
+    padding: 30px 10px;
+  }
+
+  .stats-counter-col {
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 15px 8px;
+  }
+
+  .stats-counter-title {
+    font-size: 14px;
+  }
+
+  .stats-counter-number,
+  .stats-counter-suffix {
+    font-size: 26px;
+    letter-spacing: -1px;
+  }
+}

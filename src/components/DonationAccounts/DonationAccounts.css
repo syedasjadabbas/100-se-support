@@ -1,0 +1,222 @@
+.donate-accounts-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 60px 0 120px 0;
+  overflow: hidden;
+  scroll-margin-top: 100px;
+}
+
+/* Background Contour Graphic */
+.donate-bg-graphic {
+  position: absolute;
+  top: 10%;
+  right: -50px;
+  width: 420px;
+  max-width: 35vw;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.donate-bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.donate-accounts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Yellow Heading Banner (9f9b9b1) */
+.donate-yellow-banner {
+  background-color: var(--color-yellow);
+  border-radius: 10px;
+  padding: 80px 100px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.donate-yellow-title {
+  font-family: var(--font-sans);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -2px;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+/* Orange Accounts Card (e38e0dc) */
+.donate-accounts-card {
+  background-color: var(--color-accent);
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.donate-accounts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.donate-account-col {
+  flex: 0 0 33.333%;
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+}
+
+.donate-account-col:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.donate-account-type {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.donate-number-row {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.donate-account-number {
+  font-family: var(--font-sans);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--color-white);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.donate-copied-toast {
+  position: absolute;
+  top: -28px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(4px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+.donate-account-holder {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive - Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .donate-accounts-section {
+    padding: 50px 0 80px 0;
+  }
+
+  .donate-yellow-banner {
+    padding: 60px 40px;
+  }
+
+  .donate-yellow-title {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .donate-account-col {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+
+  .donate-account-col:last-child {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
+
+/* Responsive - Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .donate-accounts-section {
+    padding: 40px 0 60px 0;
+  }
+
+  .donate-accounts-container {
+    padding: 0 16px;
+    gap: 20px;
+  }
+
+  .donate-yellow-banner {
+    padding: 50px 20px;
+    border-radius: 8px;
+  }
+
+  .donate-yellow-title {
+    font-size: 24px;
+    letter-spacing: normal;
+    line-height: 1.35;
+  }
+
+  .donate-accounts-card {
+    padding: 24px 12px;
+    border-radius: 8px;
+  }
+
+  .donate-accounts-grid {
+    flex-direction: column;
+  }
+
+  .donate-account-col {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 14px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .donate-account-col:last-child {
+    border-bottom: none;
+  }
+
+  .donate-account-number {
+    font-size: 24px;
+  }
+
+  .donate-bg-graphic {
+    display: none;
+  }
+}

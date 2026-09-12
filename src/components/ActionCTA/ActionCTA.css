@@ -1,0 +1,128 @@
+.action-cta-section {
+  width: 100%;
+  background-color: var(--color-primary);
+  padding: 100px 0 30px 0;
+}
+
+.action-cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.action-cta-heading-wrap {
+  margin-bottom: 40px;
+}
+
+.action-cta-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.action-cta-lead {
+  font-family: var(--font-sans);
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: var(--color-secondary);
+}
+
+.action-cta-accent {
+  font-family: var(--font-accent);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--color-white);
+}
+
+.action-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.action-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.action-cta-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Responsive - Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .action-cta-section {
+    padding: 80px 0 20px 0;
+  }
+
+  .action-cta-lead {
+    font-size: 48px;
+  }
+
+  .action-cta-accent {
+    font-size: 34px;
+  }
+
+  .action-cta-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+/* Responsive - Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .action-cta-section {
+    padding: 60px 0 15px 0;
+  }
+
+  .action-cta-container {
+    padding: 0 16px;
+  }
+
+  .action-cta-title {
+    gap: 8px;
+  }
+
+  .action-cta-lead {
+    font-size: 32px;
+  }
+
+  .action-cta-accent {
+    font-size: 28px;
+  }
+
+  .action-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .action-cta-btn {
+    width: 100%;
+    padding: 14px 20px;
+    text-align: center;
+  }
+}
