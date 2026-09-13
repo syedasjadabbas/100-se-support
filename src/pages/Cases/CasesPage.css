@@ -4,7 +4,7 @@
 }
 
 .cases-container {
-  max-width: 1200px;
+  max-width: 1170px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -176,4 +176,51 @@
   .cases-portfolio-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Pagination */
+.cases-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.cases-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #EBE5F5;
+  background-color: #FFFFFF;
+  color: var(--color-secondary, #333356);
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(51, 51, 86, 0.04);
+}
+
+.cases-page-btn:hover {
+  border-color: var(--color-primary, #00A669);
+  color: var(--color-primary, #00A669);
+  background-color: #F8F6FC;
+}
+
+.cases-page-btn--active {
+  background-color: var(--color-primary, #00A669) !important;
+  border-color: var(--color-primary, #00A669) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 166, 105, 0.25);
+}
+
+.cases-page-btn--prev,
+.cases-page-btn--next {
+  font-size: 18px;
 }

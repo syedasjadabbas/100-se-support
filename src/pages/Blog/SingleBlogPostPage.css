@@ -125,3 +125,178 @@
     font-size: 15px;
   }
 }
+
+/* WordPress Comment Area: Leave a Reply */
+.comment-respond {
+  margin-top: 50px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid #EBE5F5;
+  box-shadow: 0 4px 20px rgba(51, 51, 86, 0.04);
+}
+
+.comment-reply-title {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-secondary, #333356);
+  margin: 0 0 10px;
+}
+
+.comment-notes {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #5D5D66;
+  margin-bottom: 24px;
+}
+
+.comment-notes .required {
+  color: #E63946;
+}
+
+.comment-form-error {
+  background-color: #FEE2E2;
+  color: #DC2626;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.comment-success-notice {
+  background-color: #ECFDF5;
+  border: 1.5px solid #A7F3D0;
+  color: #065F46;
+  padding: 24px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.comment-success-notice p {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.comment-submit-another-btn {
+  background-color: var(--color-primary, #00A669);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comment-form-comment,
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+  margin: 0;
+}
+
+.comment-form-comment textarea {
+  width: 100%;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: 1px solid #D9DBE3;
+  background-color: #FFFFFF;
+  color: #333356;
+  outline: none;
+  resize: vertical;
+  min-height: 140px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+  width: 100%;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: 1px solid #D9DBE3;
+  background-color: #FFFFFF;
+  color: #333356;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.comment-form-comment textarea:focus,
+.comment-form-author input:focus,
+.comment-form-email input:focus,
+.comment-form-url input:focus {
+  border-color: var(--color-primary, #00A669);
+}
+
+.comment-form-cookies-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  color: #333356;
+  line-height: 1.6;
+  margin: 8px 0 12px;
+}
+
+.comment-form-cookies-consent input {
+  margin-top: 4px;
+  accent-color: var(--color-primary, #00A669);
+  cursor: pointer;
+}
+
+.comment-form-cookies-consent label {
+  cursor: pointer;
+}
+
+.form-submit {
+  margin: 0;
+}
+
+.form-submit .submit {
+  background-color: var(--color-primary, #00A669);
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.5;
+  padding: 16px 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-submit .submit:hover {
+  background-color: #008755;
+}
+
+@media (max-width: 600px) {
+  .comment-respond {
+    padding: 24px 16px;
+  }
+
+  .form-submit .submit {
+    width: 100%;
+    padding: 14px 24px;
+  }
+}

@@ -13,12 +13,20 @@ import './CasesPage.css';
 
 export type CaseCategoryType = 'all' | 'flood' | 'monthly' | 'heatwave' | 'healthcare';
 
+const ITEMS_PER_PAGE = 12;
+
 interface CasesPageProps {
   defaultCategory?: CaseCategoryType;
 }
 
 export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' }) => {
   const [activeCategory, setActiveCategory] = useState<CaseCategoryType>(defaultCategory);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const handleCategoryChange = (category: CaseCategoryType) => {
+    setActiveCategory(category);
+    setCurrentPage(1);
+  };
 
   const getFilteredCases = (): CaseItem[] => {
     switch (activeCategory) {
@@ -53,6 +61,19 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
   };
 
   const filteredCases = getFilteredCases();
+  const totalPages = Math.ceil(filteredCases.length / ITEMS_PER_PAGE);
+  const displayedCases = filteredCases.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    const section = document.querySelector('.cases-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="cases-page">
@@ -73,7 +94,7 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
               role="tab"
               aria-selected={activeCategory === 'all'}
               className={`cases-filter-btn ${activeCategory === 'all' ? 'cases-filter-btn--active' : ''}`}
-              onClick={() => setActiveCategory('all')}
+              onClick={() => handleCategoryChange('all')}
             >
               All ({ALL_CASES.length})
             </button>
@@ -82,7 +103,7 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
               role="tab"
               aria-selected={activeCategory === 'monthly'}
               className={`cases-filter-btn ${activeCategory === 'monthly' ? 'cases-filter-btn--active' : ''}`}
-              onClick={() => setActiveCategory('monthly')}
+              onClick={() => handleCategoryChange('monthly')}
             >
               Monthly ({MONTHLY_CASES.length})
             </button>
@@ -91,7 +112,7 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
               role="tab"
               aria-selected={activeCategory === 'flood'}
               className={`cases-filter-btn ${activeCategory === 'flood' ? 'cases-filter-btn--active' : ''}`}
-              onClick={() => setActiveCategory('flood')}
+              onClick={() => handleCategoryChange('flood')}
             >
               Flood ({FLOOD_CASES.length})
             </button>
@@ -100,7 +121,7 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
               role="tab"
               aria-selected={activeCategory === 'heatwave'}
               className={`cases-filter-btn ${activeCategory === 'heatwave' ? 'cases-filter-btn--active' : ''}`}
-              onClick={() => setActiveCategory('heatwave')}
+              onClick={() => handleCategoryChange('heatwave')}
             >
               Heatwave ({HEATWAVE_CASES.length})
             </button>
@@ -109,7 +130,7 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
               role="tab"
               aria-selected={activeCategory === 'healthcare'}
               className={`cases-filter-btn ${activeCategory === 'healthcare' ? 'cases-filter-btn--active' : ''}`}
-              onClick={() => setActiveCategory('healthcare')}
+              onClick={() => handleCategoryChange('healthcare')}
             >
               Healthcare ({HEALTHCARE_CASES.length})
             </button>
@@ -117,7 +138,7 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
 
           {/* Portfolio Grid */}
           <div className="cases-portfolio-grid">
-            {filteredCases.map((item) => (
+            {displayedCases.map((item) => (
               <article key={item.id} className="case-portfolio-item">
                 <Link to={`/campaigns/${item.slug}/`} className="case-portfolio-link">
                   <div className="case-portfolio-img-wrap">
@@ -142,6 +163,47 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
               </article>
             ))}
           </div>
+
+          {/* Elementor-Style Client-Side Pagination */}
+          {totalPages > 1 && (
+            <nav className="cases-pagination" aria-label="Cases Pagination">
+              {currentPage > 1 && (
+                <button
+                  type="button"
+                  className="cases-page-btn cases-page-btn--prev"
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  aria-label="Previous page"
+                >
+                  &laquo;
+                </button>
+              )}
+
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                <button
+                  key={pageNum}
+                  type="button"
+                  className={`cases-page-btn ${
+                    currentPage === pageNum ? 'cases-page-btn--active' : ''
+                  }`}
+                  onClick={() => handlePageChange(pageNum)}
+                  aria-current={currentPage === pageNum ? 'page' : undefined}
+                >
+                  {pageNum}
+                </button>
+              ))}
+
+              {currentPage < totalPages && (
+                <button
+                  type="button"
+                  className="cases-page-btn cases-page-btn--next"
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  aria-label="Next page"
+                >
+                  &raquo;
+                </button>
+              )}
+            </nav>
+          )}
         </div>
       </section>
     </div>
