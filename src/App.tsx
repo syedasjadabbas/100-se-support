@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { BackToTop } from './components/UI/BackToTop';
@@ -21,7 +21,7 @@ import './App.css';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <div className="app-shell">
         <Header />
@@ -101,7 +101,7 @@ const App: React.FC = () => {
         <Footer />
         <BackToTop />
       </div>
-    </BrowserRouter>
+    </>
   );
 };
 
