@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../../types/navigation';
 import './MobileDrawer.css';
 
@@ -9,6 +10,7 @@ interface MobileDrawerProps {
 
 export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+  const location = useLocation();
 
   useEffect(() => {
     if (isOpen) {
@@ -56,17 +58,22 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             {NAV_ITEMS.map((item) => {
               const hasChildren = Boolean(item.children && item.children.length > 0);
               const isExpanded = Boolean(expandedItems[item.id]);
+              const isCurrentActive =
+                item.href === '/'
+                  ? location.pathname === '/'
+                  : location.pathname.startsWith(item.href) ||
+                    (item.href.endsWith('/') && location.pathname === item.href.slice(0, -1));
 
               return (
                 <li key={item.id} className="mobile-drawer__item">
                   <div className="mobile-drawer__link-row">
-                    <a
-                      href={item.href}
-                      className={`mobile-drawer__link ${item.isActive ? 'mobile-drawer__link--active' : ''}`}
+                    <Link
+                      to={item.href}
+                      className={`mobile-drawer__link ${isCurrentActive ? 'mobile-drawer__link--active' : ''}`}
                       onClick={hasChildren ? (e) => toggleSubmenu(item.id, e) : onClose}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                     {hasChildren && (
                       <button
                         type="button"
@@ -86,13 +93,13 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
                     <ul className="mobile-drawer__submenu">
                       {item.children.map((sub) => (
                         <li key={sub.id} className="mobile-drawer__submenu-item">
-                          <a
-                            href={sub.href}
+                          <Link
+                            to={sub.href}
                             className="mobile-drawer__submenu-link"
                             onClick={onClose}
                           >
                             {sub.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>

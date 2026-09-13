@@ -1,0 +1,127 @@
+.single-blog-page {
+  background-color: #FBF9FE;
+  min-height: 70vh;
+}
+
+.single-blog-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.single-blog-article {
+  padding: 60px 0 100px;
+}
+
+.single-blog-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: 0 10px 30px rgba(51, 51, 86, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.single-blog-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  color: #777799;
+}
+
+.single-blog-badge {
+  background-color: rgba(0, 166, 105, 0.12);
+  color: var(--color-primary, #00A669);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.single-blog-author {
+  font-weight: 600;
+}
+
+.single-blog-dot {
+  color: #CCC;
+}
+
+.single-blog-media {
+  margin-bottom: 36px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.single-blog-featured-img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.single-blog-content {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333356;
+}
+
+.single-blog-content p {
+  margin-bottom: 20px;
+}
+
+.single-blog-footer {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #EFEBF8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.single-blog-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-secondary, #333356);
+  text-decoration: none;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.single-blog-back-link:hover {
+  color: var(--color-primary, #00A669);
+}
+
+.single-blog-donate-btn {
+  background-color: var(--color-primary, #00A669);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+}
+
+.single-blog-donate-btn:hover {
+  background-color: #008755;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .single-blog-card {
+    padding: 28px 20px;
+  }
+
+  .single-blog-content {
+    font-size: 15px;
+  }
+}

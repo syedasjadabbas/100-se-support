@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import type { SubMenuItem } from '../../types/navigation';
 import './Dropdown.css';
 
@@ -13,14 +14,14 @@ export const Dropdown: React.FC<DropdownProps> = ({ items, isOpen, onClose }) =>
     <ul className={`nav-dropdown ${isOpen ? 'nav-dropdown--open' : ''}`} role="menu">
       {items.map((sub) => (
         <li key={sub.id} className="nav-dropdown__item" role="none">
-          <a
-            href={sub.href}
+          <Link
+            to={sub.href}
             className="nav-dropdown__link"
             role="menuitem"
             onClick={onClose}
           >
             {sub.label}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

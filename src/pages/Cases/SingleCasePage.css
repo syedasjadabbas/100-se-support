@@ -1,0 +1,241 @@
+.single-case-page {
+  background-color: #FBF9FE;
+  min-height: 70vh;
+}
+
+.single-case-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.single-case-content-section {
+  padding: 60px 0 100px;
+}
+
+.single-case-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  align-items: start;
+}
+
+.single-case-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 44px;
+  box-shadow: 0 10px 30px rgba(51, 51, 86, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.single-case-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.single-case-tag {
+  background-color: rgba(0, 166, 105, 0.12);
+  color: var(--color-primary, #00A669);
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.single-case-tag--health {
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+
+.single-case-verified {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: #059669;
+}
+
+.single-case-media {
+  margin-bottom: 32px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.single-case-img {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  display: block;
+}
+
+.single-case-heading {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-secondary, #333356);
+  margin: 0 0 16px;
+}
+
+.single-case-description {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444466;
+}
+
+.single-case-description p {
+  margin-bottom: 16px;
+}
+
+.single-case-footer-nav {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #EFEBF8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.single-case-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-secondary, #333356);
+  text-decoration: none;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.single-case-back-btn:hover {
+  color: var(--color-primary, #00A669);
+}
+
+.single-case-donate-btn {
+  background-color: var(--color-primary, #00A669);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+}
+
+.single-case-donate-btn:hover {
+  background-color: #008755;
+  transform: translateY(-2px);
+}
+
+/* Sidebar Support Card */
+.single-case-support-card {
+  position: sticky;
+  top: 110px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(51, 51, 86, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.single-case-card-badge {
+  display: inline-block;
+  font-family: var(--font-accent, 'Fuzzy Bubbles', cursive);
+  color: var(--color-primary, #00A669);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.single-case-card-title {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-secondary, #333356);
+  margin: 0 0 10px;
+}
+
+.single-case-card-desc {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666688;
+  margin: 0 0 20px;
+}
+
+.single-case-bank-details {
+  background-color: #F8F6FC;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.single-case-bank-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px;
+}
+
+.single-case-bank-label {
+  color: #777799;
+  font-weight: 600;
+}
+
+.single-case-bank-val {
+  color: var(--color-secondary, #333356);
+  font-weight: 700;
+  text-align: right;
+}
+
+.single-case-online-btn {
+  display: block;
+  text-align: center;
+  background-color: var(--color-primary, #00A669);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(0, 166, 105, 0.2);
+}
+
+.single-case-online-btn:hover {
+  background-color: #008755;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .single-case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .single-case-support-card {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .single-case-card {
+    padding: 24px 18px;
+  }
+
+  .single-case-heading {
+    font-size: 22px;
+  }
+}
