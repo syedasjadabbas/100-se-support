@@ -1,10 +1,13 @@
 .page-banner {
-  background: linear-gradient(180deg, #F9F6FE 0%, #FFFFFF 100%);
+  background-color: rgb(51, 51, 86);
+  background-image: url('/assets/pattern-footer.png');
+  background-repeat: repeat;
+  background-position: center;
   padding: 60px 24px 45px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .page-banner__container {
@@ -18,7 +21,7 @@
   font-family: var(--font-sans, 'Manrope', sans-serif);
   font-size: 46px;
   font-weight: 800;
-  color: var(--color-secondary, #333356);
+  color: #FFFFFF;
   margin: 0 0 16px;
   line-height: 1.2;
 }
@@ -27,7 +30,7 @@
   font-family: var(--font-sans, 'Manrope', sans-serif);
   font-size: 17px;
   line-height: 1.65;
-  color: #555577;
+  color: rgba(255, 255, 255, 0.85);
   max-width: 760px;
   margin: 0 auto 20px;
 }
@@ -50,24 +53,24 @@
 }
 
 .page-banner__breadcrumb-link {
-  color: var(--color-primary, #00A669);
+  color: var(--color-accent, #FFA765);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .page-banner__breadcrumb-link:hover {
-  color: #008755;
+  color: var(--color-yellow, #FFD44A);
   text-decoration: underline;
 }
 
 .page-banner__breadcrumb-sep {
-  color: #AAAAAA;
+  color: rgba(255, 255, 255, 0.4);
   user-select: none;
 }
 
 .page-banner__breadcrumb-current {
-  color: #777788;
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
 }
 

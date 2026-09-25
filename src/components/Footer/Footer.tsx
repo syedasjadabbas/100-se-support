@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
   return (
     <footer className="site-footer" aria-label="Site Footer">
       <div className="site-footer-container">
-        {/* Left Column: Brand & Mission Statement */}
-        <div className="footer-col-info">
+        {/* Left Column: Big Prominent Logo */}
+        <div className="footer-col-logo">
           <Link
             to="/"
             className="footer-logo-link"
@@ -29,10 +29,14 @@ export const Footer: React.FC = () => {
               src="/logo.jpg"
               alt="100seSupport Logo"
               className="footer-logo-img"
-              width="140"
-              height="135"
+              width="220"
+              height="210"
             />
           </Link>
+        </div>
+
+        {/* Middle Column: Mission Statement in between */}
+        <div className="footer-col-text">
           <p className="footer-mission-text">
             We truly believe that contributing just PKR. 100 can bring positive change to society.
             Transparency, accountability, and empathy are at the heart of 100seSupport. We ensure

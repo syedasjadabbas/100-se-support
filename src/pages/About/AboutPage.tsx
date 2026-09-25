@@ -130,21 +130,19 @@ export const AboutPage: React.FC = () => {
       {/* Who We Are Section */}
       <section id="who" className="about-who-section">
         <div className="about-container">
-          <div className="about-who-card">
-            <span className="about-badge">Who We Are</span>
-            <h2 className="about-heading">Grassroots Transparency & Impact</h2>
-            <p className="about-who-text">
-              Established in 2021, 100seSupport began with a simple yet powerful realization:
-              massive collective change does not require astronomical wealth. By uniting individuals
-              willing to contribute just PKR. 100 monthly, we create a reliable fund that directly
-              empowers struggling households, provides emergency medical relief, funds small sustainable
-              businesses, and delivers relief packages during national emergencies.
-            </p>
-            <p className="about-who-text">
-              We operate on an absolute zero-overhead model where 100% of public donations go directly
-              to verified cases. All logistics, verifications, and media coverage are provided voluntarily
-              by our dedicated team members.
-            </p>
+          <div className="about-who-header">
+            <h2 className="about-heading about-who-title">Who We Are</h2>
+          </div>
+          <div className="about-video-wrapper">
+            <video
+              className="about-video-player"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/assets/who-we-are.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>

@@ -10,54 +10,63 @@
 }
 
 .site-footer-container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  align-items: center;
+  gap: 36px;
   min-height: 414px;
 }
 
-/* Left Column: Brand Statement */
-.footer-col-info {
-  flex: 0 0 62%;
-  max-width: 620px;
-  padding: 80px 0 100px 0;
+/* Left Column: Big Prominent Logo */
+.footer-col-logo {
+  flex: 0 0 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
 }
 
 .footer-logo-link {
   display: inline-block;
-  margin-bottom: 24px;
 }
 
 .footer-logo-img {
-  width: 140px;
-  height: 135px;
+  width: 220px;
+  height: 210px;
   object-fit: contain;
   border-radius: 50%;
   display: block;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35));
   transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
 .footer-logo-link:hover .footer-logo-img {
   transform: scale(1.04);
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.45));
+}
+
+/* Middle Column: Mission Statement in between */
+.footer-col-text {
+  flex: 1 1 360px;
+  max-width: 480px;
+  padding: 40px 10px;
 }
 
 .footer-mission-text {
   font-family: var(--font-sans);
   font-size: 17px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--color-white);
   margin: 0;
+  font-weight: 500;
 }
 
 /* Right Column: Floating Lavender Card (153e7a60) */
 .footer-col-nav {
-  flex: 0 0 35%;
+  flex: 0 0 350px;
   display: flex;
   justify-content: flex-end;
 }
@@ -134,21 +143,34 @@
 /* Responsive - Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
   .site-footer-container {
-    flex-direction: column-reverse; /* elementor-reverse-tablet */
+    flex-direction: column-reverse;
+    align-items: center;
     gap: 32px;
-  }
-
-  .footer-col-info {
-    flex: none;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 0 60px 0;
+    padding: 0 24px 50px;
   }
 
   .footer-col-nav {
     flex: none;
     width: 100%;
     max-width: 450px;
+  }
+
+  .footer-col-logo {
+    flex: none;
+    padding: 20px 0 0;
+  }
+
+  .footer-logo-img {
+    width: 180px;
+    height: 172px;
+  }
+
+  .footer-col-text {
+    flex: none;
+    width: 100%;
+    max-width: 580px;
+    padding: 0;
+    text-align: center;
   }
 
   .footer-card {
@@ -169,16 +191,22 @@
 /* Responsive - Mobile (max-width: 767px) */
 @media (max-width: 767px) {
   .site-footer-container {
-    padding: 0 16px;
+    padding: 0 16px 40px;
+    gap: 24px;
   }
 
   .footer-logo-img {
-    width: 120px;
-    height: 115px;
+    width: 150px;
+    height: 144px;
+  }
+
+  .footer-col-text {
+    text-align: left;
   }
 
   .footer-mission-text {
     font-size: 15px;
+    line-height: 1.65;
   }
 
   .footer-col-nav {

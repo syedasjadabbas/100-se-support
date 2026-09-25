@@ -11,9 +11,9 @@
 
 .contact-badge {
   display: inline-block;
-  font-family: var(--font-accent, 'Fuzzy Bubbles', cursive);
+  font-family: var(--font-sans, 'Manrope', sans-serif);
   color: var(--color-primary, #00A669);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 12px;
 }
