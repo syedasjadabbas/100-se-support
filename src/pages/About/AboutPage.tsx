@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { PageBanner } from '../../components/UI/PageBanner';
 import { TEAM_MEMBERS } from '../../data/teamData';
 import './AboutPage.css';
 
 export const AboutPage: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoEl.play().catch(() => {
+              // Browsers permit autoplay when muted
+            });
+          } else {
+            videoEl.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.35, // Starts playing when 35% visible, pauses when scrolled away
+      }
+    );
+
+    observer.observe(videoEl);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <div className="about-page">
       <PageBanner
@@ -135,8 +164,11 @@ export const AboutPage: React.FC = () => {
           </div>
           <div className="about-video-wrapper">
             <video
+              ref={videoRef}
               className="about-video-player"
               controls
+              muted
+              loop
               playsInline
               preload="metadata"
             >

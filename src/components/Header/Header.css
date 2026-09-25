@@ -5,9 +5,16 @@
   right: 0;
   width: 100%;
   background-color: var(--color-white);
-  z-index: var(--z-header);
+  z-index: var(--z-header, 1000);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
-  transition: box-shadow var(--transition-fast);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.site-header--scrolled {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .site-header__container {
@@ -20,6 +27,12 @@
   padding: 8px 32px;
   min-height: 114px;
   box-sizing: border-box;
+  transition: min-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+}
+
+.site-header--scrolled .site-header__container {
+  min-height: 72px;
+  padding: 4px 32px;
 }
 
 /* Logo */
@@ -41,7 +54,12 @@
   object-fit: contain;
   border-radius: 50%;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
-  transition: transform var(--transition-fast), filter var(--transition-fast);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.site-header--scrolled .site-header__logo-img {
+  width: 66px;
+  height: 62px;
 }
 
 .site-header__logo-link:hover .site-header__logo-img {
@@ -137,9 +155,19 @@
     min-height: 96px;
   }
 
+  .site-header--scrolled .site-header__container {
+    min-height: 66px;
+    padding: 4px 20px;
+  }
+
   .site-header__logo-img {
     width: 95px;
     height: 90px;
+  }
+
+  .site-header--scrolled .site-header__logo-img {
+    width: 58px;
+    height: 54px;
   }
 }
 
@@ -149,10 +177,21 @@
     min-height: 84px;
   }
 
+  .site-header--scrolled .site-header__container {
+    min-height: 60px;
+    padding: 4px 16px;
+  }
+
   .site-header__logo-img {
     width: 78px;
     height: 74px;
   }
+
+  .site-header--scrolled .site-header__logo-img {
+    width: 48px;
+    height: 44px;
+  }
+
   .site-header__actions-col {
     gap: 10px;
   }

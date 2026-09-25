@@ -18,9 +18,7 @@
   pointer-events: none;
 }
 
-.nav-dropdown--open,
-.nav-menu__item:hover .nav-dropdown,
-.nav-menu__item:focus-within .nav-dropdown {
+.nav-dropdown--open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);

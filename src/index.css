@@ -1,6 +1,11 @@
 @import './styles/variables.css';
 @import './styles/reset.css';
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
 #root {
   min-height: 100vh;
   display: flex;

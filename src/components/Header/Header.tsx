@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NavMenu } from './NavMenu';
 import { MobileDrawer } from './MobileDrawer';
@@ -9,7 +9,17 @@ import './Header.css';
 export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 25);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLogoClick = () => {
     if (location.pathname === '/') {
@@ -19,7 +29,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="site-header">
+      <header className={`site-header ${isScrolled ? 'site-header--scrolled' : ''}`}>
         <div className="site-header__container">
           {/* Logo */}
           <div className="site-header__logo-col">

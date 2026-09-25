@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../../types/navigation';
 import { Dropdown } from './Dropdown';
@@ -7,6 +7,20 @@ import './NavMenu.css';
 export const NavMenu: React.FC = () => {
   const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
   const location = useLocation();
+
+  // Close dropdown immediately when page route changes
+  useEffect(() => {
+    setOpenDropdownId(null);
+  }, [location.pathname]);
+
+  // Close dropdown immediately when user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      setOpenDropdownId(null);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMouseEnter = (id: string) => {
     setOpenDropdownId(id);
@@ -43,6 +57,10 @@ export const NavMenu: React.FC = () => {
                 aria-current={isCurrentActive ? 'page' : undefined}
                 aria-haspopup={hasChildren ? 'true' : undefined}
                 aria-expanded={hasChildren ? isDropdownOpen : undefined}
+                onClick={(e) => {
+                  e.currentTarget.blur();
+                  setOpenDropdownId(null);
+                }}
               >
                 {item.label}
                 {hasChildren && (
