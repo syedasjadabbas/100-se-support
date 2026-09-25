@@ -20,8 +20,8 @@ export const Header: React.FC = () => {
                 src="/logo.jpg"
                 alt="100seSupport Logo"
                 className="site-header__logo-img"
-                width={64}
-                height={62}
+                width={115}
+                height={110}
               />
             </a>
           </div>

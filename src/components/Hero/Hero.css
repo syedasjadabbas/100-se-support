@@ -57,9 +57,10 @@
 .hero__heading {
   display: flex;
   flex-direction: column;
+  gap: 14px;
   margin: 0;
   color: #FFFFFF;
-  line-height: 1.08;
+  line-height: 1.2;
 }
 
 .hero__heading-main {
@@ -72,8 +73,8 @@
 
 .hero__heading-sub {
   display: inline-flex;
-  align-items: baseline;
-  gap: 16px;
+  align-items: center;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -85,11 +86,19 @@
 }
 
 .hero__heading-accent {
-  font-family: var(--font-accent);
-  font-size: 75px;
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-size: 72px;
+  font-weight: 800;
   color: var(--color-accent);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 20px 6px;
+  background-color: #041f17;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .hero__description {
@@ -150,25 +159,37 @@
   color: #843700;
 }
 
-/* Right Column: Photo Collage */
+/* Right Column: Photo Collage (4 Images) */
 .hero__collage-col {
-  flex: 0 0 42%;
-  max-width: 44%;
+  flex: 0 0 48%;
+  max-width: 50%;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.hero__collage-wrap {
-  position: relative;
+.hero__collage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
   width: 100%;
-  min-height: 520px;
 }
 
 .hero__photo {
-  position: absolute;
-  border-radius: 10px;
+  position: relative;
+  height: 245px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
-  transition: transform 0.3s ease;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  border: none;
+  background-color: #062319;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform: none;
+}
+
+.hero__photo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.5);
 }
 
 .hero__photo-img {
@@ -176,47 +197,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.hero__photo--primary {
-  top: 0;
-  left: 40px;
-  width: 380px;
-  max-width: 85%;
-  transform: rotate(-3deg);
-  z-index: 3;
-}
-
-.hero__photo--secondary {
-  top: 80px;
-  right: -10px;
-  width: 300px;
-  max-width: 70%;
-  transform: rotate(4deg);
-  z-index: 2;
-}
-
-.hero__photo--tertiary {
-  top: 260px;
-  left: 10px;
-  width: 260px;
-  max-width: 60%;
-  transform: rotate(-4deg);
-  z-index: 4;
-}
-
-.hero__photo--accent {
-  top: 290px;
-  right: 20px;
-  width: 240px;
-  max-width: 55%;
-  transform: rotate(2deg);
-  z-index: 1;
-}
-
-.hero__photo:hover {
-  transform: scale(1.03) rotate(0deg);
-  z-index: 10;
 }
 
 /* Tablet Responsive Breakpoint */
@@ -235,10 +215,19 @@
     max-width: 44%;
   }
 
+  .hero__heading {
+    gap: 12px;
+  }
+
   .hero__heading-main,
-  .hero__heading-with,
-  .hero__heading-accent {
+  .hero__heading-with {
     font-size: 58px;
+  }
+
+  .hero__heading-accent {
+    font-size: 54px;
+    padding: 2px 16px 4px;
+    border-radius: 12px;
   }
 
   .hero__description {
@@ -257,27 +246,19 @@
     font-size: 16px;
   }
 
-  .hero__collage-wrap {
-    min-height: 420px;
+  .hero__collage-col {
+    flex: 0 0 46%;
+    max-width: 48%;
   }
 
-  .hero__photo--primary {
-    width: 280px;
-    left: 20px;
+  .hero__collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
-  .hero__photo--secondary {
-    width: 220px;
-  }
-
-  .hero__photo--tertiary {
-    width: 200px;
-    top: 220px;
-  }
-
-  .hero__photo--accent {
-    width: 180px;
-    top: 240px;
+  .hero__photo {
+    height: 195px;
+    border-radius: 12px;
   }
 }
 
@@ -302,10 +283,19 @@
     max-width: 100%;
   }
 
+  .hero__heading {
+    gap: 10px;
+  }
+
   .hero__heading-main,
-  .hero__heading-with,
+  .hero__heading-with {
+    font-size: 42px;
+  }
+
   .hero__heading-accent {
-    font-size: 44px;
+    font-size: 38px;
+    padding: 2px 12px 4px;
+    border-radius: 8px;
   }
 
   .hero__heading-sub {
@@ -339,31 +329,16 @@
     width: 100%;
   }
 
-  .hero__collage-wrap {
-    min-height: 340px;
-    max-width: 360px;
+  .hero__collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 520px;
     margin: 0 auto;
   }
 
-  .hero__photo--primary {
-    width: 240px;
-    left: 10px;
-  }
-
-  .hero__photo--secondary {
-    width: 190px;
-    right: 0;
-    top: 60px;
-  }
-
-  .hero__photo--tertiary {
-    width: 170px;
-    left: 0;
-    top: 180px;
-  }
-
-  .hero__photo--accent {
-    display: none;
+  .hero__photo {
+    height: 150px;
+    border-radius: 10px;
   }
 
   .hero__bg-graphic {

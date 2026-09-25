@@ -42,11 +42,10 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Photo Collage */}
+          {/* Right Column: Photo Collage (4 Images) */}
           <div className="hero__collage-col" aria-label="Relief and Support Activities">
-            <div className="hero__collage-wrap">
-              {/* Primary Feature Photo: Tree Plantation Aid */}
-              <div className="hero__photo hero__photo--primary">
+            <div className="hero__collage-grid">
+              <div className="hero__photo">
                 <img
                   src="/hero/hero-main-tree.jpg"
                   alt="100seSupport volunteer tree plantation initiative"
@@ -55,8 +54,7 @@ export const Hero: React.FC = () => {
                 />
               </div>
 
-              {/* Secondary Overlapping Photo: Volunteer Food Camp */}
-              <div className="hero__photo hero__photo--secondary">
+              <div className="hero__photo">
                 <img
                   src="/hero/hero-volunteer-food.jpg"
                   alt="Volunteers organizing food and relief supplies"
@@ -65,8 +63,7 @@ export const Hero: React.FC = () => {
                 />
               </div>
 
-              {/* Tertiary Floating Photo: Medical & Family Relief */}
-              <div className="hero__photo hero__photo--tertiary">
+              <div className="hero__photo">
                 <img
                   src="/hero/hero-family-ration.jpg"
                   alt="Providing ration assistance to families"
@@ -75,8 +72,7 @@ export const Hero: React.FC = () => {
                 />
               </div>
 
-              {/* Floating Accent Photo: Child Support Aid */}
-              <div className="hero__photo hero__photo--accent">
+              <div className="hero__photo">
                 <img
                   src="/hero/hero-child-support.jpg"
                   alt="Community child welfare support"

@@ -23,7 +23,7 @@ export const AboutPage: React.FC = () => {
             <h2 className="about-heading">Changing Lives With PKR 100</h2>
             <p className="about-description">
               We focus on providing vital support to those in need, addressing issues like
-              poverty, food entrepreneurship, education, healthcare, and basic necessities.
+              poverty, business startup, education, marriage, construction, healthcare, and basic necessities.
             </p>
             <p className="about-description-secondary">
               We truly believe that contributing just PKR. 100 can bring positive change to
