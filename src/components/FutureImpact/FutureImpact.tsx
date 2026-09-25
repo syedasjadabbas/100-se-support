@@ -25,9 +25,10 @@ export const FutureImpact: React.FC = () => {
         <div className="future-content-col">
           <div className="future-content-inner">
             <div className="future-heading-wrap">
-              <h2 className="future-title-main">Be a Force</h2>
-              <span className="future-title-accent">for the</span>
-              <span className="future-title-accent">Future</span>
+              <h2 className="future-title">
+                <span className="future-title-main">Be a Force </span>
+                <span className="future-title-accent">for the Future</span>
+              </h2>
             </div>
 
             <ul className="future-bullets">
@@ -39,7 +40,7 @@ export const FutureImpact: React.FC = () => {
             </ul>
 
             <div className="future-action">
-              <a href="/about-us/" className="future-cta-btn">
+              <a href="#donate" className="future-cta-btn">
                 Get Involved
               </a>
             </div>

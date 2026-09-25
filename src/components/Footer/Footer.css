@@ -33,10 +33,18 @@
 }
 
 .footer-logo-img {
-  width: 164px;
-  max-width: 164px;
-  height: auto;
+  width: 140px;
+  height: 135px;
+  object-fit: contain;
+  border-radius: 50%;
   display: block;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.25));
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.footer-logo-link:hover .footer-logo-img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
 }
 
 .footer-mission-text {
@@ -165,7 +173,8 @@
   }
 
   .footer-logo-img {
-    width: 130px;
+    width: 120px;
+    height: 115px;
   }
 
   .footer-mission-text {
@@ -198,4 +207,31 @@
     width: 24px;
     height: 24px;
   }
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom-bar {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 22px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.5;
 }

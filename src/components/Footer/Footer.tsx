@@ -19,13 +19,18 @@ export const Footer: React.FC = () => {
       <div className="site-footer-container">
         {/* Left Column: Brand & Mission Statement */}
         <div className="footer-col-info">
-          <Link to="/" className="footer-logo-link" aria-label="100seSupport Home">
+          <Link
+            to="/"
+            className="footer-logo-link"
+            aria-label="100seSupport Home"
+            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}
+          >
             <img
-              src="/assets/100-Se-Support-Logo-e1717155452874.jpg"
+              src="/logo.jpg"
               alt="100seSupport Logo"
               className="footer-logo-img"
-              width="164"
-              height="160"
+              width="140"
+              height="135"
             />
           </Link>
           <p className="footer-mission-text">
@@ -120,6 +125,15 @@ export const Footer: React.FC = () => {
               </a>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Bottom Copyright Bar */}
+      <div className="footer-bottom-bar">
+        <div className="footer-bottom-container">
+          <p className="footer-copyright">
+            &copy; {new Date().getFullYear()} 100seSupport. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

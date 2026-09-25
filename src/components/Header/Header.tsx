@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { NavMenu } from './NavMenu';
 import { MobileDrawer } from './MobileDrawer';
 import { SearchModal } from './SearchModal';
@@ -8,6 +9,13 @@ import './Header.css';
 export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -15,7 +23,12 @@ export const Header: React.FC = () => {
         <div className="site-header__container">
           {/* Logo */}
           <div className="site-header__logo-col">
-            <a href="/" className="site-header__logo-link" aria-label="100seSupport Home">
+            <Link
+              to="/"
+              className="site-header__logo-link"
+              aria-label="100seSupport Home"
+              onClick={handleLogoClick}
+            >
               <img
                 src="/logo.jpg"
                 alt="100seSupport Logo"
@@ -23,7 +36,7 @@ export const Header: React.FC = () => {
                 width={115}
                 height={110}
               />
-            </a>
+            </Link>
           </div>
 
           {/* Right Area: Navigation + Search + CTA */}
