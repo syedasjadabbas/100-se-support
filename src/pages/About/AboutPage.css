@@ -296,44 +296,66 @@
 .about-team-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
+  gap: 44px 24px;
+}
+
+.about-team-subgroup-header {
+  text-align: center;
+  margin: 70px auto 40px;
+}
+
+.about-subgroup-heading {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-secondary, #333356);
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.about-subgroup-heading::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-primary, #00A669);
+  border-radius: 2px;
+  margin: 10px auto 0;
 }
 
 .team-member-card {
-  background: #FFFFFF;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(51, 51, 86, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  text-align: center;
-  padding: 24px 16px 20px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  transition: transform 0.25s ease;
 }
 
 .team-member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 30px rgba(51, 51, 86, 0.1);
+  transform: translateY(-4px);
 }
 
 .team-member-image-wrap {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   background-color: #F0EDF7;
   margin: 0 auto;
-  border: 4px solid #F3F4F9;
-  box-shadow: 0 4px 14px rgba(51, 51, 86, 0.08);
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  border: 3px solid #EAEBF2;
+  box-shadow: 0 6px 18px rgba(51, 51, 86, 0.08);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   flex-shrink: 0;
 }
 
 .team-member-card:hover .team-member-image-wrap {
   border-color: var(--color-primary, #00A669);
-  transform: scale(1.04);
+  box-shadow: 0 10px 24px rgba(0, 166, 105, 0.22);
 }
 
 .team-member-img {
@@ -342,75 +364,121 @@
   object-fit: cover;
   border-radius: 50%;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.team-member-card:hover .team-member-img {
+  transform: scale(1.05);
 }
 
 .team-member-info {
-  margin-top: 16px;
+  margin-top: 14px;
   padding: 0;
   text-align: center;
 }
 
 .team-member-name {
   font-family: var(--font-sans, 'Manrope', sans-serif);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--color-secondary, #333356);
   margin: 0;
   line-height: 1.35;
 }
 
-/* CTA Section */
+/* CTA / Support Our Work Section */
 .about-cta-section {
-  padding: 40px 0 90px;
+  padding: 50px 0 90px;
+  background: linear-gradient(180deg, #0B4D3C 0%, #0B4D3C 55%, #FFFFFF 55%, #FFFFFF 100%);
+  position: relative;
 }
 
 .about-cta-card {
-  background: linear-gradient(135deg, #00A669 0%, #008755 100%);
-  border-radius: 28px;
-  padding: 60px 40px;
-  text-align: center;
-  color: #FFFFFF;
-  box-shadow: 0 20px 45px rgba(0, 166, 105, 0.25);
+  background-color: #F8BE28;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.16);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: stretch;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
-.about-cta-tag {
+.about-cta-image-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+}
+
+.about-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-cta-content-col {
+  background-color: #F8BE28;
+  padding: 48px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about-cta-badge {
   display: inline-block;
-  font-family: var(--font-accent, 'Fuzzy Bubbles', cursive);
-  font-size: 18px;
+  background-color: #232742;
+  color: #FFFFFF;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px;
   font-weight: 700;
-  color: #FFD44A;
-  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: 6px;
+  margin-bottom: 24px;
 }
 
 .about-cta-title {
   font-family: var(--font-sans, 'Manrope', sans-serif);
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 800;
-  color: #FFFFFF;
-  margin: 0 0 16px;
-  line-height: 1.25;
+  color: #232742;
+  margin: 0 0 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-.about-cta-subtitle {
+.about-cta-action {
+  margin-top: 4px;
+}
+
+.about-btn-donate {
+  background-color: #843700;
+  color: #FFFFFF;
   font-family: var(--font-sans, 'Manrope', sans-serif);
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
-  margin: 0 auto 32px;
-  line-height: 1.6;
+  font-weight: 700;
+  padding: 14px 38px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(132, 55, 0, 0.25);
+  line-height: 1.2;
 }
 
-.about-btn-cta {
-  background-color: #FFD44A;
-  color: #333356;
-  font-size: 16px;
-  padding: 16px 40px;
-}
-
-.about-btn-cta:hover {
-  background-color: #FFE07D;
+.about-btn-donate:hover {
+  background-color: #6a2c00;
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(132, 55, 0, 0.35);
 }
 
 /* Responsive */
@@ -436,13 +504,42 @@
     font-size: 32px;
   }
 
-  .about-cta-title {
-    font-size: 30px;
-  }
-
   .about-team-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
+
+  .about-cta-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-cta-content-col {
+    padding: 36px 30px;
+  }
+
+  .about-cta-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta-image-col {
+    min-height: 260px;
+    max-height: 320px;
+  }
+
+  .about-cta-content-col {
+    padding: 36px 24px;
+  }
+
+  .about-cta-title {
+    font-size: 28px;
+    margin-bottom: 22px;
   }
 }
 
@@ -457,25 +554,17 @@
 
   .about-team-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .team-member-card {
-    padding: 18px 10px 16px;
+    gap: 30px 14px;
   }
 
   .team-member-image-wrap {
-    width: 105px;
-    height: 105px;
+    width: 115px;
+    height: 115px;
     border-width: 3px;
   }
 
   .team-member-name {
-    font-size: 13.5px;
-  }
-
-  .about-cta-card {
-    padding: 40px 20px;
+    font-size: 14px;
   }
 
   .about-cta-title {

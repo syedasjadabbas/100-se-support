@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { PageBanner } from '../../components/UI/PageBanner';
-import { TEAM_MEMBERS } from '../../data/teamData';
+import { TEAM_MEMBERS, FEMALE_VOLUNTEERS } from '../../data/teamData';
 import './AboutPage.css';
 
 export const AboutPage: React.FC = () => {
@@ -209,21 +209,54 @@ export const AboutPage: React.FC = () => {
               </div>
             ))}
           </div>
+
+          {/* Female Volunteers Section */}
+          <div className="about-team-subgroup-header">
+            <h3 className="about-subgroup-heading">Female Volunteers</h3>
+          </div>
+
+          <div className="about-team-grid about-team-grid--female">
+            {FEMALE_VOLUNTEERS.map((member) => (
+              <div key={member.id} className="team-member-card">
+                <div className="team-member-image-wrap">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="team-member-img"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="team-member-info">
+                  <h3 className="team-member-name">{member.name}</h3>
+                  {member.role && <p className="team-member-role">{member.role}</p>}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Bottom CTA Section */}
+      {/* Bottom CTA / Support Our Work Section */}
       <section id="donate" className="about-cta-section">
         <div className="about-container">
           <div className="about-cta-card">
-            <span className="about-cta-tag">support our work</span>
-            <h2 className="about-cta-title">Help us fulfill the need of someone in need</h2>
-            <p className="about-cta-subtitle">
-              Your PKR. 100 may seem small, but combined with thousands of others, it changes lives forever.
-            </p>
-            <Link to="/donate-now/" className="about-btn about-btn-cta">
-              Donate Now
-            </Link>
+            <div className="about-cta-image-col">
+              <img
+                src="/assets/support-our-work.jpg"
+                alt="100seSupport volunteers supporting children with supplies"
+                className="about-cta-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="about-cta-content-col">
+              <span className="about-cta-badge">SUPPORT OUR WORK</span>
+              <h2 className="about-cta-title">Help us fulfill the need of someone in need</h2>
+              <div className="about-cta-action">
+                <Link to="/donate-now/" className="about-btn about-btn-donate">
+                  Donate Now
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

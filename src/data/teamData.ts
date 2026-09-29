@@ -37,14 +37,29 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: '/assets/WhatsApp-Image-2024-06-02-at-7.50.17-PM-1-scaled-e1717509760772-qp61drl49un0mfseg19xhxnqnmqajbb8c69up15hvc.jpeg',
   },
   {
+    id: 'haseeb',
+    name: 'Haseeb Ur Rehman',
+    image: '/assets/haseeb-ur-rehman.jpg',
+  },
+  {
+    id: 'ghalib',
+    name: 'Ghalib Hussain Phulpoto',
+    image: '/assets/WhatsApp-Image-2024-06-03-at-1.36.15-PM-1-scaled-e1717509970871-qp61j8z85258cjtofell1jujejpdfr2v3b9th50tko.jpeg',
+  },
+  {
+    id: 'kashan',
+    name: 'Kashan Phulpoto',
+    image: '/assets/kashan-phulpoto.png',
+  },
+  {
     id: 'taha',
     name: 'Muhammad Taha Memon',
     image: '/assets/WhatsApp-Image-2024-06-02-at-7.01.44-PM-scaled-e1717510331572-qp61snd4hf0gg665jgv9z6gh99diese8du4m8r33co.jpeg',
   },
   {
-    id: 'ali-hyder',
-    name: 'Ali Hyder',
-    image: '/assets/Screenshot-2024-06-02-190012-qp2k1j8ggxqf6q22pljg0kwzn6y3ym2amp6iufhfaw.png',
+    id: 'farmanullah',
+    name: 'Farmanullah Phulpoto',
+    image: '/assets/WhatsApp-Image-2024-06-04-at-7.05.42-PM-e1717510177161-qp61omlz8xias80f0qaqb6zhrx6zhefkhxnuc51pyw.jpeg',
   },
   {
     id: 'ali-ahmed',
@@ -57,28 +72,21 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: '/assets/1712736506192-scaled-qp2k6yqvyh629m62zy1uf7kv7c6gfnmgpkvinzfjco.jpg',
   },
   {
-    id: 'ghalib',
-    name: 'Ghalib Hussain Phulpoto',
-    image: '/assets/WhatsApp-Image-2024-06-03-at-1.36.15-PM-1-scaled-e1717509970871-qp61j8z85258cjtofell1jujejpdfr2v3b9th50tko.jpeg',
-  },
-  {
     id: 'arshiyan',
     name: 'Muhammad Arshiyan',
     image: '/assets/WhatsApp-Image-2024-06-04-at-11.45.48-PM-e1717568134165-qp77pwvy4t2ybxvohutzkbkyxyehqw2jw03iv9a8jc.jpeg',
   },
   {
-    id: 'farmanullah',
-    name: 'Farmanullah Phulpoto',
-    image: '/assets/WhatsApp-Image-2024-06-04-at-7.05.42-PM-e1717510177161-qp61omlz8xias80f0qaqb6zhrx6zhefkhxnuc51pyw.jpeg',
+    id: 'ali-hyder',
+    name: 'Ali Hyder',
+    image: '/assets/Screenshot-2024-06-02-190012-qp2k1j8ggxqf6q22pljg0kwzn6y3ym2amp6iufhfaw.png',
   },
+];
+
+export const FEMALE_VOLUNTEERS: TeamMember[] = [
   {
-    id: 'kashan',
-    name: 'Kashan Phulpoto',
-    image: '/assets/kashan-phulpoto.png',
-  },
-  {
-    id: 'haseeb',
-    name: 'Haseeb Ur Rehman',
-    image: '/assets/haseeb-ur-rehman.jpg',
+    id: 'syeda-shumaila',
+    name: 'Syeda Shumaila Rubab',
+    image: '/assets/syeda-shumaila-rubab.jpg',
   },
 ];
