@@ -89,4 +89,54 @@ export const FEMALE_VOLUNTEERS: TeamMember[] = [
     name: 'Syeda Shumaila Rubab',
     image: '/assets/syeda-shumaila-rubab.jpg',
   },
+  {
+    id: 'summaya-zahid',
+    name: 'Summaya Zahid',
+    image: '/assets/summaya-zahid.jpg',
+  },
+  {
+    id: 'syeda-husnaina',
+    name: 'Syeda Husnaina Bukhari',
+    image: '/assets/syeda-husnaina-bukhari.jpg',
+  },
+  {
+    id: 'hiba-qazi',
+    name: 'Hiba Qazi',
+    image: '/assets/hiba-qazi.jpg',
+  },
+  {
+    id: 'fiza-asad',
+    name: 'Fiza Asad',
+    image: '/assets/avatar-female-hijab.png',
+  },
+  {
+    id: 'sobia-asad',
+    name: 'Sobia Asad',
+    image: '/assets/avatar-female-hijab.png',
+  },
+  {
+    id: 'iqra-asad',
+    name: 'Iqra Asad',
+    image: '/assets/avatar-female-hijab.png',
+  },
+  {
+    id: 'fatima-qazi',
+    name: 'Fatima Qazi',
+    image: '/assets/avatar-female-hijab.png',
+  },
+  {
+    id: 'faria-asad',
+    name: 'Faria Asad',
+    image: '/assets/avatar-female-hijab.png',
+  },
+  {
+    id: 'rabia-asad',
+    name: 'Rabia Asad',
+    image: '/assets/avatar-female-hijab.png',
+  },
+  {
+    id: 'dua-asad',
+    name: 'Dua Asad',
+    image: '/assets/avatar-female-hijab.png',
+  },
 ];
