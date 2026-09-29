@@ -60,20 +60,11 @@ export const SingleCasePage: React.FC = () => {
                 />
               </div>
 
-              <h2 className="single-case-heading">Case Overview & Verification</h2>
+              <h2 className="single-case-heading">Case Overview & Details</h2>
               <div className="single-case-description">
-                <p>{currentCase.description}</p>
-                <p>
-                  As part of 100seSupport&apos;s strict verification model, volunteers personally
-                  visited the household to assess the living conditions, investigate specific
-                  emergency needs, and confirm that no commercial third-party intermediaries were
-                  involved.
-                </p>
-                <p>
-                  Instead of distributing unstructured cash, 100seSupport directly purchased,
-                  transported, and delivered the required supplies—ensuring absolute transparency and
-                  accountability for every PKR. 100 donated.
-                </p>
+                {currentCase.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index} style={{ whiteSpace: 'pre-line' }}>{paragraph}</p>
+                ))}
               </div>
 
               <div className="single-case-footer-nav">
