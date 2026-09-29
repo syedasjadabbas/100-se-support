@@ -295,54 +295,68 @@
 
 .about-team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
 }
 
 .team-member-card {
   background: #FFFFFF;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(51, 51, 86, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(51, 51, 86, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-align: center;
+  padding: 24px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team-member-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(51, 51, 86, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(51, 51, 86, 0.1);
 }
 
 .team-member-image-wrap {
-  width: 100%;
-  aspect-ratio: 1 / 1.15;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   overflow: hidden;
   background-color: #F0EDF7;
+  margin: 0 auto;
+  border: 4px solid #F3F4F9;
+  box-shadow: 0 4px 14px rgba(51, 51, 86, 0.08);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.team-member-card:hover .team-member-image-wrap {
+  border-color: var(--color-primary, #00A669);
+  transform: scale(1.04);
 }
 
 .team-member-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.team-member-card:hover .team-member-img {
-  transform: scale(1.05);
+  border-radius: 50%;
+  display: block;
 }
 
 .team-member-info {
-  padding: 18px 16px 20px;
+  margin-top: 16px;
+  padding: 0;
+  text-align: center;
 }
 
 .team-member-name {
   font-family: var(--font-sans, 'Manrope', sans-serif);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--color-secondary, #333356);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 /* CTA Section */
@@ -400,6 +414,13 @@
 }
 
 /* Responsive */
+@media (max-width: 1150px) {
+  .about-team-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
 @media (max-width: 992px) {
   .about-intro-grid,
   .about-core-grid {
@@ -418,9 +439,14 @@
   .about-cta-title {
     font-size: 30px;
   }
+
+  .about-team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .about-intro-section {
     padding: 50px 0 40px;
   }
@@ -432,6 +458,20 @@
   .about-team-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  .team-member-card {
+    padding: 18px 10px 16px;
+  }
+
+  .team-member-image-wrap {
+    width: 105px;
+    height: 105px;
+    border-width: 3px;
+  }
+
+  .team-member-name {
+    font-size: 13.5px;
   }
 
   .about-cta-card {

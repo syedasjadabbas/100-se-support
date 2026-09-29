@@ -71,4 +71,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Farmanullah Phulpoto',
     image: '/assets/WhatsApp-Image-2024-06-04-at-7.05.42-PM-e1717510177161-qp61omlz8xias80f0qaqb6zhrx6zhefkhxnuc51pyw.jpeg',
   },
+  {
+    id: 'kashan',
+    name: 'Kashan Phulpoto',
+    image: '/assets/kashan-phulpoto.png',
+  },
+  {
+    id: 'haseeb',
+    name: 'Haseeb Ur Rehman',
+    image: '/assets/haseeb-ur-rehman.jpg',
+  },
 ];

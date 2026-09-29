@@ -87,18 +87,14 @@
 
 .hero__heading-accent {
   font-family: var(--font-sans);
-  font-size: 72px;
+  font-size: 75px;
   font-weight: 800;
-  color: var(--color-accent);
   letter-spacing: -0.01em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 20px 6px;
-  background-color: #041f17;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  color: #FFA765;
+  background: linear-gradient(135deg, #FFE4A0 0%, #FFA765 60%, #FF8C38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
 }
 
 .hero__description {
@@ -220,14 +216,9 @@
   }
 
   .hero__heading-main,
-  .hero__heading-with {
-    font-size: 58px;
-  }
-
+  .hero__heading-with,
   .hero__heading-accent {
-    font-size: 54px;
-    padding: 2px 16px 4px;
-    border-radius: 12px;
+    font-size: 58px;
   }
 
   .hero__description {
@@ -288,14 +279,9 @@
   }
 
   .hero__heading-main,
-  .hero__heading-with {
-    font-size: 42px;
-  }
-
+  .hero__heading-with,
   .hero__heading-accent {
-    font-size: 38px;
-    padding: 2px 12px 4px;
-    border-radius: 8px;
+    font-size: 42px;
   }
 
   .hero__heading-sub {

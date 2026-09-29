@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
               <span className="hero__heading-main">Changing Lives</span>
               <span className="hero__heading-sub">
                 <span className="hero__heading-with">With</span>{' '}
-                <span className="hero__heading-accent">PKR. 100</span>
+                <span className="hero__heading-accent">PKR 100</span>
               </span>
             </h1>
 
