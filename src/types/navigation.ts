@@ -54,7 +54,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     id: 'flood-cases',
     label: 'Flood Cases',
-    href: '/campaigns-page/',
+    href: '/flood-cases/',
   },
   {
     id: 'heatwave-cases',

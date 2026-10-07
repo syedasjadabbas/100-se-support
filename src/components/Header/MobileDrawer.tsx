@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { NAV_ITEMS } from '../../types/navigation';
+import { isNavItemActive } from './NavMenu';
 import './MobileDrawer.css';
 
 interface MobileDrawerProps {
@@ -91,11 +92,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             {NAV_ITEMS.map((item) => {
               const hasChildren = Boolean(item.children && item.children.length > 0);
               const isExpanded = Boolean(expandedItems[item.id]);
-              const isCurrentActive =
-                item.href === '/'
-                  ? location.pathname === '/'
-                  : location.pathname.startsWith(item.href) ||
-                    (item.href.endsWith('/') && location.pathname === item.href.slice(0, -1));
+              const isCurrentActive = isNavItemActive(item.id, item.href, location.pathname);
 
               return (
                 <li key={item.id} className="mobile-drawer__item">

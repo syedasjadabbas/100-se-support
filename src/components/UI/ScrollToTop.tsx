@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export const ScrollToTop: React.FC = () => {
-  const { pathname, hash } = useLocation();
+  const location = useLocation();
+  const { pathname, hash, state } = location;
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
@@ -12,6 +13,10 @@ export const ScrollToTop: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (state && (state as { retainScroll?: boolean }).retainScroll) {
+      return;
+    }
+
     if (hash) {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
@@ -23,7 +28,7 @@ export const ScrollToTop: React.FC = () => {
       }
     }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [pathname, hash]);
+  }, [pathname, hash, state]);
 
   return null;
 };

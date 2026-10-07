@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { PageBanner } from '../../components/UI/PageBanner';
 import {
   ALL_CASES,
@@ -22,10 +22,37 @@ interface CasesPageProps {
 export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' }) => {
   const [activeCategory, setActiveCategory] = useState<CaseCategoryType>(defaultCategory);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const navigate = useNavigate();
+
+  // Keep active category in sync whenever route or defaultCategory changes (e.g. from top nav)
+  useEffect(() => {
+    setActiveCategory(defaultCategory);
+    setCurrentPage(1);
+  }, [defaultCategory]);
 
   const handleCategoryChange = (category: CaseCategoryType) => {
     setActiveCategory(category);
     setCurrentPage(1);
+
+    // Update the URL so the top navigation bar and browser history highlight the active category
+    switch (category) {
+      case 'flood':
+        navigate('/flood-cases/', { state: { retainScroll: true } });
+        break;
+      case 'monthly':
+        navigate('/monthly-cases/', { state: { retainScroll: true } });
+        break;
+      case 'heatwave':
+        navigate('/heatwave/', { state: { retainScroll: true } });
+        break;
+      case 'healthcare':
+        navigate('/healthcare-cases/', { state: { retainScroll: true } });
+        break;
+      case 'all':
+      default:
+        navigate('/campaigns-page/', { state: { retainScroll: true } });
+        break;
+    }
   };
 
   const getFilteredCases = (): CaseItem[] => {
