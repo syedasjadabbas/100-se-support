@@ -140,7 +140,7 @@
   }
 
   .site-header__search-trigger {
-    display: none;
+    display: inline-flex;
   }
 
   .site-header__mobile-toggle {

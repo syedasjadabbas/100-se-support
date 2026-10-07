@@ -56,6 +56,57 @@
   transform: rotate(90deg);
 }
 
+.mobile-drawer__search {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  padding: 4px 6px 4px 16px;
+  margin-bottom: 28px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.mobile-drawer__search:focus-within {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: var(--color-accent);
+}
+
+.mobile-drawer__search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  outline: none;
+}
+
+.mobile-drawer__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mobile-drawer__search-btn {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.mobile-drawer__search-btn:hover {
+  background-color: var(--color-accent-hover);
+}
+
 .mobile-drawer__nav {
   width: 100%;
   display: flex;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { NAV_ITEMS } from '../../types/navigation';
 import './MobileDrawer.css';
 
@@ -10,10 +10,13 @@ interface MobileDrawerProps {
 
 export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isOpen) {
+      setSearchQuery('');
       document.body.style.overflow = 'hidden';
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') onClose();
@@ -35,6 +38,15 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
     }));
   };
 
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = searchQuery.trim();
+    if (trimmed) {
+      onClose();
+      navigate(`/search?s=${encodeURIComponent(trimmed)}`);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -52,6 +64,27 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
+
+        {/* Search Bar in Mobile Drawer */}
+        <form className="mobile-drawer__search" onSubmit={handleSearchSubmit}>
+          <input
+            type="search"
+            className="mobile-drawer__search-input"
+            placeholder="Search cases, volunteers, topics..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="mobile-drawer__search-btn"
+            aria-label="Search site"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2.5" fill="none">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+        </form>
 
         <nav className="mobile-drawer__nav">
           <ul className="mobile-drawer__list">

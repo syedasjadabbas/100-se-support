@@ -16,6 +16,7 @@ import { DonatePage } from './pages/Donate/DonatePage';
 import { CasesPage } from './pages/Cases/CasesPage';
 import { SingleCasePage } from './pages/Cases/SingleCasePage';
 import { VideosPage } from './pages/Videos/VideosPage';
+import { SearchResultsPage } from './pages/Search/SearchResultsPage';
 
 import './App.css';
 
@@ -29,6 +30,10 @@ const App: React.FC = () => {
           <Routes>
             {/* 1. Home Page */}
             <Route path="/" element={<HomePage />} />
+
+            {/* Global Search */}
+            <Route path="/search" element={<SearchResultsPage />} />
+            <Route path="/search/" element={<SearchResultsPage />} />
 
             {/* 2. About Us */}
             <Route path="/about-us" element={<AboutPage />} />
