@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../../types/navigation';
 import { Dropdown } from './Dropdown';
@@ -7,26 +7,66 @@ import './NavMenu.css';
 export const NavMenu: React.FC = () => {
   const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
   const location = useLocation();
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Close dropdown immediately when page route changes
   useEffect(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
     setOpenDropdownId(null);
   }, [location.pathname]);
 
   // Close dropdown immediately when user scrolls
   useEffect(() => {
     const handleScroll = () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+        closeTimeoutRef.current = null;
+      }
       setOpenDropdownId(null);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMouseEnter = (id: string) => {
-    setOpenDropdownId(id);
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleMouseEnter = (id: string, hasChildren: boolean) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+
+    if (hasChildren) {
+      setOpenDropdownId(id);
+    } else {
+      setOpenDropdownId(null);
+    }
   };
 
   const handleMouseLeave = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdownId(null);
+    }, 200);
+  };
+
+  const handleClose = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
     setOpenDropdownId(null);
   };
 
@@ -47,9 +87,15 @@ export const NavMenu: React.FC = () => {
           return (
             <li
               key={item.id}
-              className={`nav-menu__item ${isCurrentActive ? 'nav-menu__item--active' : ''} ${hasChildren ? 'nav-menu__item--has-dropdown' : ''}`}
-              onMouseEnter={() => hasChildren && handleMouseEnter(item.id)}
+              className={`nav-menu__item ${isCurrentActive ? 'nav-menu__item--active' : ''} ${hasChildren ? 'nav-menu__item--has-dropdown' : ''} ${isDropdownOpen ? 'nav-menu__item--open' : ''}`}
+              onMouseEnter={() => handleMouseEnter(item.id, hasChildren)}
               onMouseLeave={() => hasChildren && handleMouseLeave()}
+              onFocus={() => handleMouseEnter(item.id, hasChildren)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                  handleClose();
+                }
+              }}
             >
               <Link
                 to={item.href}
@@ -59,7 +105,7 @@ export const NavMenu: React.FC = () => {
                 aria-expanded={hasChildren ? isDropdownOpen : undefined}
                 onClick={(e) => {
                   e.currentTarget.blur();
-                  setOpenDropdownId(null);
+                  handleClose();
                 }}
               >
                 {item.label}
@@ -76,7 +122,7 @@ export const NavMenu: React.FC = () => {
                 <Dropdown
                   items={item.children}
                   isOpen={isDropdownOpen}
-                  onClose={() => setOpenDropdownId(null)}
+                  onClose={handleClose}
                 />
               )}
             </li>

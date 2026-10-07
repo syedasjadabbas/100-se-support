@@ -18,6 +18,17 @@
   pointer-events: none;
 }
 
+/* Invisible bridge to eliminate the dead-zone gap between nav trigger and dropdown menu */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: -15px;
+  right: -15px;
+  height: 24px;
+  background: transparent;
+}
+
 .nav-dropdown--open {
   opacity: 1;
   visibility: visible;

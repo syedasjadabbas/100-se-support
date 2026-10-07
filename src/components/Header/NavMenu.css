@@ -32,7 +32,9 @@
   white-space: nowrap;
 }
 
-.nav-menu__link:hover {
+.nav-menu__link:hover,
+.nav-menu__item:hover .nav-menu__link,
+.nav-menu__item--open .nav-menu__link {
   color: var(--color-accent);
 }
 
@@ -48,7 +50,8 @@
   color: currentColor;
 }
 
-.nav-menu__item:hover .nav-menu__arrow {
+.nav-menu__item:hover .nav-menu__arrow,
+.nav-menu__item--open .nav-menu__arrow {
   transform: rotate(180deg);
 }
 
