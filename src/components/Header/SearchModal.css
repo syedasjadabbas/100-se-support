@@ -415,3 +415,25 @@
     top: -42px;
   }
 }
+
+@media (max-width: 420px) {
+  .search-modal {
+    padding: 56px 10px 16px;
+  }
+
+  .search-modal__input-wrapper {
+    padding: 4px 6px 4px 10px;
+    gap: 6px;
+  }
+
+  .search-modal__input {
+    font-size: 0.875rem;
+    height: 42px;
+  }
+
+  .search-modal__submit {
+    height: 42px;
+    padding: 0 12px;
+    font-size: 0.875rem;
+  }
+}

@@ -26,9 +26,16 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
     if (isOpen) {
       setQuery('');
+    }
+  }
+
+  useEffect(() => {
+    if (isOpen) {
       // Delay focus slightly to let animation start smoothly
       const timer = setTimeout(() => {
         inputRef.current?.focus();

@@ -160,4 +160,26 @@
   .author-bio-paragraph {
     font-size: 15px;
   }
+
+  .author-badge-svg {
+    right: -10px;
+    top: -20px;
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .author-container {
+    padding: 0 16px;
+  }
+
+  .author-content-section {
+    padding: 35px 0 50px;
+  }
+
+  .author-badge-svg {
+    right: 0;
+    top: -15px;
+    width: 70px;
+  }
 }

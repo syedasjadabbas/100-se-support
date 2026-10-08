@@ -544,6 +544,22 @@
 }
 
 @media (max-width: 650px) {
+  .about-container {
+    padding: 0 16px;
+  }
+
+  .about-decor-element {
+    right: -8px;
+    top: -15px;
+    width: 60px;
+  }
+
+  .about-decor-element-2 {
+    left: -8px;
+    bottom: -12px;
+    width: 60px;
+  }
+
   .about-intro-section {
     padding: 50px 0 40px;
   }
@@ -569,5 +585,24 @@
 
   .about-cta-title {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-who-card {
+    padding: 24px 16px;
+  }
+
+  .about-intro-actions {
+    flex-direction: column;
+  }
+
+  .about-btn {
+    width: 100%;
   }
 }

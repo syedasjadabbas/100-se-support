@@ -39,6 +39,23 @@
   }
 }
 
+@media (max-width: 600px), (max-height: 700px) {
+  .mobile-drawer__content {
+    justify-content: flex-start;
+    padding: 72px 20px 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-drawer__link {
+    font-size: 1.35rem;
+  }
+
+  .mobile-drawer__list {
+    gap: 16px;
+  }
+}
+
 .mobile-drawer__close {
   position: absolute;
   top: 24px;

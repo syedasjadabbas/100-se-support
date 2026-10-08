@@ -141,3 +141,20 @@
     letter-spacing: -1px;
   }
 }
+
+@media (max-width: 360px) {
+  .stats-counter-col {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 12px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stats-counter-col:last-child {
+    border-bottom: none;
+  }
+
+  .stats-main-title {
+    font-size: 26px;
+  }
+}

@@ -1,43 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { NAV_ITEMS } from '../../types/navigation';
+import { NAV_ITEMS, isNavItemActive } from '../../types/navigation';
 import { Dropdown } from './Dropdown';
 import './NavMenu.css';
-
-export const isNavItemActive = (itemId: string, itemHref: string, pathname: string): boolean => {
-  const path = pathname.replace(/\/+$/, '') || '/';
-
-  if (itemId === 'home') {
-    return path === '/';
-  }
-
-  if (itemId === 'about-us') {
-    return path === '/about-us';
-  }
-
-  if (itemId === 'monthly-cases') {
-    return path === '/monthly-cases';
-  }
-
-  if (itemId === 'flood-cases') {
-    return path === '/flood-cases' || path === '/campaigns-page';
-  }
-
-  if (itemId === 'heatwave-cases') {
-    return path === '/heatwave' || path === '/heatwave-cases';
-  }
-
-  if (itemId === 'videos') {
-    return path === '/videos';
-  }
-
-  if (itemId === 'contact-us') {
-    return path === '/contacts' || path === '/contact-us';
-  }
-
-  const cleanItemHref = itemHref.replace(/\/+$/, '') || '/';
-  return path === cleanItemHref || path.startsWith(cleanItemHref + '/');
-};
 
 export const NavMenu: React.FC = () => {
   const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
@@ -45,13 +10,11 @@ export const NavMenu: React.FC = () => {
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Close dropdown immediately when page route changes
-  useEffect(() => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-      closeTimeoutRef.current = null;
-    }
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
+  if (prevPathname !== location.pathname) {
+    setPrevPathname(location.pathname);
     setOpenDropdownId(null);
-  }, [location.pathname]);
+  }
 
   // Close dropdown immediately when user scrolls
   useEffect(() => {

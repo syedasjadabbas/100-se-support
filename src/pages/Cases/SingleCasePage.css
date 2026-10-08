@@ -255,11 +255,39 @@
 }
 
 @media (max-width: 600px) {
+  .single-case-container {
+    padding: 0 16px;
+  }
+
+  .single-case-content-section {
+    padding: 35px 0 60px;
+  }
+
   .single-case-card {
-    padding: 24px 18px;
+    padding: 24px 16px;
+  }
+
+  .single-case-support-card {
+    padding: 24px 16px;
+  }
+
+  .single-case-bank-details {
+    padding: 16px 14px;
   }
 
   .single-case-heading {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .single-case-footer-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .single-case-back-btn,
+  .single-case-donate-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }

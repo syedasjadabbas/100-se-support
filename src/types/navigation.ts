@@ -72,3 +72,38 @@ export const NAV_ITEMS: NavItem[] = [
     href: '/contacts/',
   },
 ];
+
+export const isNavItemActive = (itemId: string, itemHref: string, pathname: string): boolean => {
+  const path = pathname.replace(/\/+$/, '') || '/';
+
+  if (itemId === 'home') {
+    return path === '/';
+  }
+
+  if (itemId === 'about-us') {
+    return path === '/about-us';
+  }
+
+  if (itemId === 'monthly-cases') {
+    return path === '/monthly-cases';
+  }
+
+  if (itemId === 'flood-cases') {
+    return path === '/flood-cases' || path === '/campaigns-page';
+  }
+
+  if (itemId === 'heatwave-cases') {
+    return path === '/heatwave' || path === '/heatwave-cases';
+  }
+
+  if (itemId === 'videos') {
+    return path === '/videos';
+  }
+
+  if (itemId === 'contact-us') {
+    return path === '/contacts' || path === '/contact-us';
+  }
+
+  const cleanItemHref = itemHref.replace(/\/+$/, '') || '/';
+  return path === cleanItemHref || path.startsWith(cleanItemHref + '/');
+};

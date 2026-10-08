@@ -79,6 +79,8 @@ export const ContactPage: React.FC = () => {
               src="/assets/IMG_20220711_103203-1-scaled.jpg"
               alt="100seSupport Community Outreach"
               className="contact-intro-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -156,6 +158,8 @@ export const ContactPage: React.FC = () => {
               src="/assets/315834509_472331661665103_6828342614131799185_n.jpg"
               alt="100seSupport Helping In Need"
               className="contact-form-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 

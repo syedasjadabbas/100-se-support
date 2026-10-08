@@ -188,3 +188,17 @@
     padding: 15px 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .future-img {
+    height: 280px;
+  }
+
+  .future-content-col {
+    padding: 40px 16px;
+  }
+
+  .future-title {
+    font-size: 26px;
+  }
+}

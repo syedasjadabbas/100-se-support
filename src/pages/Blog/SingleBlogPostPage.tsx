@@ -56,6 +56,8 @@ export const SingleBlogPostPage: React.FC = () => {
                 src={post.image}
                 alt={post.title}
                 className="single-blog-featured-img"
+                loading="eager"
+                decoding="async"
               />
             </div>
 
@@ -121,6 +123,7 @@ export const SingleBlogPostPage: React.FC = () => {
                     cols={67}
                     rows={5}
                     placeholder="Comment"
+                    aria-label="Comment"
                     value={commentText}
                     onChange={(e) => setCommentText(e.target.value)}
                     required
@@ -132,6 +135,7 @@ export const SingleBlogPostPage: React.FC = () => {
                     type="text"
                     id="author"
                     name="author"
+                    aria-label="Your name"
                     value={authorName}
                     onChange={(e) => setAuthorName(e.target.value)}
                     placeholder="Your name *"
@@ -144,6 +148,7 @@ export const SingleBlogPostPage: React.FC = () => {
                     type="email"
                     id="email"
                     name="email"
+                    aria-label="Your email"
                     value={authorEmail}
                     onChange={(e) => setAuthorEmail(e.target.value)}
                     placeholder="Your email *"
@@ -156,6 +161,7 @@ export const SingleBlogPostPage: React.FC = () => {
                     type="url"
                     id="url"
                     name="url"
+                    aria-label="Website"
                     value={authorWebsite}
                     onChange={(e) => setAuthorWebsite(e.target.value)}
                     placeholder="Website"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { PageBanner } from '../../components/UI/PageBanner';
 import {
@@ -25,10 +25,12 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
   const navigate = useNavigate();
 
   // Keep active category in sync whenever route or defaultCategory changes (e.g. from top nav)
-  useEffect(() => {
+  const [prevCategory, setPrevCategory] = useState(defaultCategory);
+  if (prevCategory !== defaultCategory) {
+    setPrevCategory(defaultCategory);
     setActiveCategory(defaultCategory);
     setCurrentPage(1);
-  }, [defaultCategory]);
+  }
 
   const handleCategoryChange = (category: CaseCategoryType) => {
     setActiveCategory(category);
@@ -174,6 +176,7 @@ export const CasesPage: React.FC<CasesPageProps> = ({ defaultCategory = 'all' })
                       alt={item.title}
                       className="case-portfolio-img"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="case-portfolio-overlay">

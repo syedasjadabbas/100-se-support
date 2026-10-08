@@ -332,3 +332,28 @@
     max-width: 80vw;
   }
 }
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 36px 0 50px;
+  }
+
+  .hero__container {
+    padding: 0 16px;
+  }
+
+  .hero__heading-main,
+  .hero__heading-with,
+  .hero__heading-accent {
+    font-size: clamp(26px, 8vw, 36px);
+  }
+
+  .hero__description {
+    font-size: 15px;
+    margin-top: 16px;
+  }
+
+  .hero__photo {
+    height: 125px;
+  }
+}

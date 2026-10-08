@@ -76,12 +76,16 @@ export const AboutPage: React.FC = () => {
                 src="/assets/341759218_212601078073447_524777491893904537_n.jpg"
                 alt="100seSupport Field Distribution"
                 className="about-main-img"
+                loading="lazy"
+                decoding="async"
               />
               <img
                 src="/assets/about-8.png"
                 alt=""
                 className="about-decor-element"
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -97,12 +101,16 @@ export const AboutPage: React.FC = () => {
                 src="/assets/294883611_426663139407634_7377770372108596763_n-e1717236773990-578x1024.jpg"
                 alt="Core Practices in Action"
                 className="about-core-img"
+                loading="lazy"
+                decoding="async"
               />
               <img
                 src="/assets/about-9.png"
                 alt=""
                 className="about-decor-element-2"
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

@@ -238,3 +238,18 @@
     display: none;
   }
 }
+
+@media (max-width: 360px) {
+  .donate-account-number {
+    font-size: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .donate-yellow-title {
+    font-size: 20px;
+  }
+
+  .donate-yellow-banner {
+    padding: 36px 14px;
+  }
+}

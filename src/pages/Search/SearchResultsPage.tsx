@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { PageBanner } from '../../components/UI/PageBanner';
 import {
@@ -31,11 +31,13 @@ export const SearchResultsPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Sync input value whenever URL query changes
-  useEffect(() => {
+  const [prevRawQuery, setPrevRawQuery] = useState(rawQuery);
+  if (prevRawQuery !== rawQuery) {
+    setPrevRawQuery(rawQuery);
     setInputQuery(rawQuery);
     setCurrentPage(1);
     setActiveFilter('all');
-  }, [rawQuery]);
+  }
 
   // Compute live counts and filtered search results
   const counts = useMemo(() => getSearchCounts(rawQuery), [rawQuery]);

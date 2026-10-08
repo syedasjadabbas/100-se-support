@@ -176,6 +176,36 @@
   .cases-portfolio-grid {
     grid-template-columns: 1fr;
   }
+
+  .cases-container {
+    padding: 0 16px;
+  }
+
+  .cases-section {
+    padding: 24px 0 50px;
+  }
+
+  .cases-filter-bar {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .cases-filter-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .cases-pagination {
+    margin-top: 32px;
+    gap: 6px;
+  }
+
+  .cases-page-btn {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
 }
 
 /* Pagination */

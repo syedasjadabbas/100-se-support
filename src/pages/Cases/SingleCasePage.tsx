@@ -57,6 +57,8 @@ export const SingleCasePage: React.FC = () => {
                   src={currentCase.image}
                   alt={currentCase.title}
                   className="single-case-img"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
 

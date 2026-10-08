@@ -332,6 +332,27 @@
 }
 
 @media (max-width: 600px) {
+  .contact-container {
+    padding: 0 16px;
+  }
+
+  .contact-intro-section {
+    padding: 40px 0;
+  }
+
+  .contact-form-section {
+    padding: 40px 0;
+  }
+
+  .contact-btn-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-social-card {
+    padding: 24px 16px;
+  }
+
   .contact-form-row {
     grid-template-columns: 1fr;
   }
@@ -346,5 +367,15 @@
 
   .contact-form-title {
     font-size: 26px;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-heading {
+    font-size: 24px;
+  }
+
+  .contact-form-title {
+    font-size: 22px;
   }
 }

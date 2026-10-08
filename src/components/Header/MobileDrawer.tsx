@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { NAV_ITEMS } from '../../types/navigation';
-import { isNavItemActive } from './NavMenu';
+import { NAV_ITEMS, isNavItemActive } from '../../types/navigation';
 import './MobileDrawer.css';
 
 interface MobileDrawerProps {
@@ -15,9 +14,16 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
     if (isOpen) {
       setSearchQuery('');
+    }
+  }
+
+  useEffect(() => {
+    if (isOpen) {
       document.body.style.overflow = 'hidden';
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') onClose();
