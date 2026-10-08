@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
 
             {/* Donate Now CTA Button */}
             <div className="site-header__cta">
-              <Button href="#donate" variant="primary" size="md">
+              <Button to="/donate-now/" variant="primary" size="md">
                 Donate Now
               </Button>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Button.css';
 
 export interface ButtonProps {
@@ -6,6 +7,7 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'accent' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
+  to?: string;
   onClick?: (e: React.MouseEvent) => void;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
@@ -19,6 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   href,
+  to,
   onClick,
   className = '',
   type = 'button',
@@ -27,6 +30,19 @@ export const Button: React.FC<ButtonProps> = ({
   rel,
 }) => {
   const classes = `btn btn--${variant} btn--${size} ${className}`.trim();
+
+  if (to) {
+    return (
+      <Link
+        to={to}
+        className={classes}
+        onClick={onClick}
+        aria-label={ariaLabel}
+      >
+        <span className="btn__text">{children}</span>
+      </Link>
+    );
+  }
 
   if (href) {
     return (

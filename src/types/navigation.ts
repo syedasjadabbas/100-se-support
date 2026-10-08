@@ -42,7 +42,7 @@ export const NAV_ITEMS: NavItem[] = [
       {
         id: 'donate-sub',
         label: 'Donate',
-        href: '/about-us/#donate',
+        href: '/donate-now/',
       },
     ],
   },

@@ -91,27 +91,49 @@ export const SingleCasePage: React.FC = () => {
               </p>
 
               <div className="single-case-bank-details">
-                <div className="single-case-bank-row">
-                  <span className="single-case-bank-label">Bank:</span>
-                  <span className="single-case-bank-val">Bank Alfalah Ltd.</span>
+                {/* Meezan Bank */}
+                <div className="single-case-account-block">
+                  <span className="single-case-account-type">Bank Account (Meezan Bank):</span>
+                  <div className="single-case-bank-row">
+                    <span className="single-case-bank-label">Account #:</span>
+                    <span className="single-case-bank-val">9201 0104980230</span>
+                  </div>
+                  <div className="single-case-bank-row">
+                    <span className="single-case-bank-label">Title:</span>
+                    <span className="single-case-bank-val">Usama Waseem (Meezan Bank)</span>
+                  </div>
                 </div>
-                <div className="single-case-bank-row">
-                  <span className="single-case-bank-label">Title:</span>
-                  <span className="single-case-bank-val">100seSupport Welfare Trust</span>
+
+                <div className="single-case-account-divider" />
+
+                {/* Easypaisa */}
+                <div className="single-case-account-block">
+                  <span className="single-case-account-type">Easypaisa:</span>
+                  <div className="single-case-bank-row">
+                    <span className="single-case-bank-label">Account #:</span>
+                    <span className="single-case-bank-val">03133474377</span>
+                  </div>
+                  <div className="single-case-bank-row">
+                    <span className="single-case-bank-label">Title:</span>
+                    <span className="single-case-bank-val">Haseeb Ur Rehman</span>
+                  </div>
                 </div>
-                <div className="single-case-bank-row">
-                  <span className="single-case-bank-label">Account #:</span>
-                  <span className="single-case-bank-val">0123-1004567890</span>
-                </div>
-                <div className="single-case-bank-row">
-                  <span className="single-case-bank-label">EasyPaisa / JazzCash:</span>
-                  <span className="single-case-bank-val">0300-1234567</span>
+
+                <div className="single-case-account-divider" />
+
+                {/* Jazzcash */}
+                <div className="single-case-account-block">
+                  <span className="single-case-account-type">Jazzcash:</span>
+                  <div className="single-case-bank-row">
+                    <span className="single-case-bank-label">Account #:</span>
+                    <span className="single-case-bank-val">03030305309</span>
+                  </div>
+                  <div className="single-case-bank-row">
+                    <span className="single-case-bank-label">Title:</span>
+                    <span className="single-case-bank-val">Amanullah</span>
+                  </div>
                 </div>
               </div>
-
-              <Link to="/donate-now/" className="single-case-online-btn">
-                Online Donation Form
-              </Link>
             </div>
           </aside>
         </div>

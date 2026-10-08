@@ -175,16 +175,38 @@
 .single-case-bank-details {
   background-color: #F8F6FC;
   border-radius: 16px;
-  padding: 18px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.single-case-account-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.single-case-account-type {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--color-primary, #00A669);
+  margin-bottom: 2px;
+}
+
+.single-case-account-divider {
+  height: 1px;
+  background-color: #E8E5F0;
+  margin: 4px 0;
 }
 
 .single-case-bank-row {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
   font-family: var(--font-sans, 'Manrope', sans-serif);
   font-size: 13px;
 }
@@ -192,12 +214,14 @@
 .single-case-bank-label {
   color: #777799;
   font-weight: 600;
+  flex-shrink: 0;
 }
 
 .single-case-bank-val {
   color: var(--color-secondary, #333356);
   font-weight: 700;
   text-align: right;
+  word-break: break-word;
 }
 
 .single-case-online-btn {
